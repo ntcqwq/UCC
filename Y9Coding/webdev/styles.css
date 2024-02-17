@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:900&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+
+@keyframes transition {
+	0% {
+		background-color: rgba(235, 242, 250, 0.7);
+	}
+
+	10% {
+		background-color: rgba(169, 195, 152, 0.7);
+	}
+
+	20% {
+		background-color: rgba(136, 172, 103, 0.7);
+	}
+
+	30% {
+		background-color: rgba(127, 165, 130, 0.7);
+	}
+
+	40% {
+		background-color: rgba(118, 159, 157, 0.7);
+	}
+
+	50% {
+		background-color: rgba(109, 152, 184, 0.7);
+	}
+
+	60% {
+		background-color: rgba(66, 122, 161, 0.7);
+	}
+
+	70% {
+		background-color: rgba(6, 71, 137, 0.7);
+	}
+
+	80% {
+		background-color: rgba(64, 114, 166, 0.7);
+	}
+
+	90% {
+		background-color: rgba(121, 151, 194, 0.7);
+	}
+
+	100% {
+		background-color: rgba(235, 242, 250, 0.7);
+	}
+}
+
+body {
+	background-size: 100%;
+	background-image: url("imgs/bodybg.png");
+	opacity: 70%;
+	background-color: transparent;
+}
+
+.nav-wrapper {
+	background: linear-gradient(to right, #3204fdba, #0789facc), url(https://i.stack.imgur.com/LCCB6.jpg) repeat top center;
+}
+
+.brand-logo {
+	margin-left: 25px;
+}
+
+.section img[src="imgs/waves.png"] {
+	margin-top: 500px;
+	width: 100%;
+	height: 323px;
+}
+
+.section2 {
+	margin-top: -15px;
+	height: 4000px;
+	width: 100vw;
+	background-color: rgb(27, 181, 254);
+	position: absolute;
+	color: white;
+	font-family: "Signika Negative";
+}
+
+.text1 {
+	margin-left: 40px;
+	color: rgb(235, 242, 250);
+}
+
+.title {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+	animation-name: transition;
+	animation-duration: 22s;
+	animation-iteration-count: infinite;
+}
+
+#container2 {
+	position: absolute;
+	margin: auto;
+	width: 100vw;
+	height: 100pt;
+	top: 0;
+	bottom: 0;
+	filter: url(#threshold) blur(0.6px);
+}
+
+#text1,
+#text2 {
+	position: absolute;
+	width: 100%;
+	display: inline-block;
+	font-family: 'Dancing Script';
+	font-size: 80pt;
+	text-align: center;
+	user-select: none;
+}
+
+.section3 {
+	margin: 50px
+}
+
+.section2 div {
+	display: flex;
+	align-items: center;
+	opacity: 100%;
+}
+
+.section2 div img {
+	width: 10%;
+	height: 10%;
+	margin-left: 50px;
+}
+
+.card:hover {
+	border-style: solid;
+	border-width: thin;
+	border-color: teal;
+}
+
+.section4 img[src="imgs/land.png"] {
+	position: absolute;
+	margin-top: 3800px;
+	width: 100%;
+	height: 323px;
+}
+
+.section7 img[src="imgs/trees.png"] {
+	position: absolute;
+	width: 100% !important;
+	height: 323px;
+}
+
+.section5 {
+	margin-top: 4000px;
+	height: 4000px;
+	width: 100vw;
+	color: black !important;
+	background-color: white;
+	position: flex;
+	font-family: "Signika Negative"
+}
+
+.section8 {
+	height: 2700px;
+	width: 100vw;
+	color: black !important;
+	background-color: white;
+	position: flex;
+	font-family: "Signika Negative"
+}
+
+.section5 div {
+	position: relative;
+	display: flex;
+	align-items: center;
+	color: black;
+}
+
+.section5 div img {
+	width: 10%;
+	height: 10%;
+	margin-left: 50px;
+}
+
+.section8 div {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+
+.section8 div img {
+	width: 10%;
+	height: 10%;
+	margin-left: 50px;
+}
+
+.cc2 {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-15%, -180%);
+	text-align: center;
+	color: white !important;
+}
+
+.page-footer {
+	background: linear-gradient(to right, #3204fdba, #0789facc), url(https://i.stack.imgur.com/LCCB6.jpg) repeat top center;
+}
+
+.card-image img {
+	height: 250px !important;
+	object-fit: cover !important;
+	margin-left: 0px !important;
+}
+
+.organization {
+	margin-bottom: 30px;
+}
+
+.donate-button {
+	display: inline-block;
+}

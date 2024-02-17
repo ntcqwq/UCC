@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>It's over</title>
+	<!-- p5js, css & js frameworks: bootstrap, materialize, plotlyjs, d3, fonts -->
+	<link href="styles.css" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+	<script src="https://cdn.plot.ly/plotly-2.20.0.min.js" charset="utf-8"></script>
+	<script src="https://d3js.org/d3.v7.min.js"></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<!-- navigation bar -->
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#" class="brand-logo"><i class="bi bi-globe"></i></a>
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="imgs/about.gif">About me</a></li>
+			</ul>
+		</div>
+	</nav>
+	<!-- morph text -->
+	<div id="container2">
+		<div class="title">
+			<span id="text1" style="color:white; font-weight: bold;"></span>
+			<span id="text2" style="color:white; font-weight: bold;"></span>
+		</div>
+	</div>
+	<!-- matrix for morph -->
+	<div>
+		<svg id="filters">
+			<defs>
+				<filter id="threshold">
+					<feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+							0 1 0 0 0
+							0 0 1 0 0
+							0 0 0 255 -140" />
+				</filter>
+			</defs>
+		</svg>
+	</div>
+	<br>
+	<!-- goal 14: life under water -->
+	<div id="container">
+		<!-- divider transition image -->
+		<div class="section">
+			<img src="imgs/waves.png" alt="divider1">
+		</div>
+		<!-- goal 14 body  -->
+		<div class="section2">
+			<div>
+				<img src="imgs/goal14.png">
+				<h1 class="text1">GOAL 14: Life Under Water</h1>
+			</div>
+			<br>
+			<!-- graphs -->
+			<div class="section3">
+				<div id='cgraph' style="width:50%; height:auto"></div>
+				<div id='lgraph' style="width:50%; height:auto"></div>
+			</div>
+			<!-- graph analysis -->
+			<div class="row" style="margin: 50px;">
+				<div class="col s12 m6">
+					<div class="card sc">
+						<div class="card-content">
+							<span class="card-title"></span>
+							<p>
+								<span style="font-size:15.0pt; color: black;">Hard coral covers are an important
+									indicator of the
+									health of the coral reefs. Over the years, monitoring data has provided valuable
+									insights into the changing trends of hard coral covers. In the late 1970s, hard
+									coral covers were recorded at around 32.34%, followed by a slight decrease in the
+									following years. However, in 1985, there was a notable increase to 32.36%,
+									indicating a possible recovery. Unfortunately, this positive trend did not last, as
+									the years that followed witnessed a decline in hard coral covers. By 2000, the
+									percentage dropped significantly to 30.09%. The early 2000s continued to show a
+									decline, reaching a low point of 28.80% in 2018. This decline is concerning, as it
+									highlights the vulnerability and endangerment of hard corals. Factors such as
+									climate change, ocean acidification, pollution, and overfishing have all contributed
+									to the degradation of coral reefs. These fragile ecosystems provide essential
+									habitats for countless marine species, and the loss of hard coral covers not only
+									impacts the corals themselves but also disrupts the delicate balance of marine
+									biodiversity. Although the coral reefs make up less than 1% of the marine
+									population, it is home to 25% of all marine species. As seen on the choropleth,
+									developing coastal communities are more prone to produce plastic waste.</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- targets -->
+			<div>
+				<h4 class="text1" style="margin: 50px; font-size: 35px;">Targets
+				</h4>
+			</div>
+			<!-- image carousel for goal 14 targets -->
+			<div class="container">
+				<div id="cef" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#cef" data-slide-to="0" class="active"></li>
+						<li data-target="#cef" data-slide-to="1"></li>
+						<li data-target="#cef" data-slide-to="2"></li>
+						<li data-target="#cef" data-slide-to="3"></li>
+						<li data-target="#cef" data-slide-to="4"></li>
+						<li data-target="#cef" data-slide-to="5"></li>
+						<li data-target="#cef" data-slide-to="6"></li>
+						<li data-target="#cef" data-slide-to="7"></li>
+						<li data-target="#cef" data-slide-to="8"></li>
+						<li data-target="#cef" data-slide-to="9"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.1: REDUCE MARINE POLLUTION</h3>
+								<br>
+								<p>By 2025, prevent and significantly reduce marine pollution of all kinds, in
+									particular from land-based activities, including marine debris and nutrient
+									pollution.</p>
+							</div>
+
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.2: PROTECT AND RESTORE ECOSYSTEMS</h3>
+								<br>
+								<p>By 2020, sustainably manage and protect marine and coastal ecosystems to avoid
+									significant adverse impacts, including by strengthening their resilience, and take
+									action for their restoration in order to achieve healthy and productive oceans.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.3: REDUCE OCEAN ACIDIFICATION</h3>
+								<br>
+								<p>Minimize and address the impacts of ocean acidification, including through enhanced
+									scientific cooperation at all levels.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.4: SUSTAINABLE FISHING</h3>
+								<br>
+								<p>By 2020, effectively regulate harvesting and end overfishing, illegal, unreported and
+									unregulated fishing and destructive fishing practices and implement science-based
+									management plans, in order to restore fish stocks in the shortest time feasible, at
+									least to levels that can produce maximum sustainable yield as determined by their
+									biological characteristics.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.5: CONSERVE COASTAL AND MARINE AREAS
+								</h3>
+								<br>
+								<p>By 2020, conserve at least 10% of coastal and marine areas, consistent with national
+									and international law and based on the best available scientific information.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.6: END SUBSIDIES CONTRIBUTING TO OVERFISHING
+								</h3>
+								<br>
+								<p>By 2020, prohibit certain forms of fisheries subsidies which contribute to
+									overcapacity and overfishing, eliminate subsidies that contribute to illegal,
+									unreported and unregulated fishing and refrain from introducing new such subsidies,
+									recognizing that appropriate and effective special and differential treatment for
+									developing and least developed countries should be an integral part of the World
+									Trade Organization fisheries subsidies negotiation.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.7: INCREASE THE ECONOMIC BENEFITS FROM SUSTAINABLE USE OF MARINE RESOURCES
+								</h3>
+								<br>
+								<p>By 2030, increase the economic benefits to small island developing States and least
+									developed countries from the sustainable use of marine resources, including through
+									sustainable management of fisheries, aquaculture and tourism.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.8: INCREASE SCIENTIFIC KNOWLEDGE, RESEARCH AND TECHNOLOGY FOR OCEAN HEALTH
+								</h3>
+								<br>
+								<p>Increase scientific knowledge, develop research capacity and transfer marine
+									technology, taking into account the Intergovernmental Oceanographic Commission
+									Criteria and Guidelines on the Transfer of Marine Technology, in order to improve
+									ocean health and to enhance the contribution of marine biodiversity to the
+									development of developing countries, in particular small island developing States
+									and least developed countries.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.9: SUPPORT SMALL SCALE FISHERS</h3>
+								<br>
+								<p>Provide access for small-scale artisanal fishers to marine resources and markets.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/ocean.png" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>TARGET 14.10: IMPLEMENT AND ENFORCE INTERNATIONAL SEA LAW
+								</h3>
+								<br>
+								<p>Enhance the conservation and sustainable use of oceans and their resources by
+									implementing international law as reflected in the United Nations Convention on the
+									Law of the Sea, which provides the legal framework for the conservation and
+									sustainable use of oceans and their resources, as recalled in paragraph 158 of “The
+									future we want”.</p>
+							</div>
+						</div>
+					</div>
+
+					<a class="carousel-control-prev" href="#cef" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#cef" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<!-- importance of goal 14 -->
+			<div>
+				<h4 class="text1" style="margin: 50px; font-size: 35px;">Why is this important?</h4>
+			</div>
+			<div class="row" style="margin-left: 50px; margin-right: 50px;">
+				<div class="col s12 m6">
+					<div class="card sc">
+						<div class="card-content">
+							<span class="card-title"></span>
+							<p>
+								<span style="font-size:15.0pt;opacity:100%;color:black">The preservation of our oceans
+									and seas,
+									which encompass 70% of our planet, is vital for our survival. They play a crucial
+									role in providing us with sustenance, energy, and freshwater. Unfortunately, we have
+									inflicted significant harm upon these invaluable resources. It is imperative that we
+									safeguard them by eradicating pollution and overfishing, while promptly implementing
+									responsible management and protection measures for marine life worldwide. This goal
+									emphasizes the preservation and sustainable utilization of oceans, seas, and marine
+									resources. The importance of this goal lies in the oceans' vital role in regulating
+									the Earth's climate and maintaining biodiversity. Oceans act as carbon sinks,
+									absorbing a significant amount of carbon dioxide from the atmosphere, thereby
+									mitigating the impacts of climate change. Additionally, marine ecosystems support
+									livelihoods, provide food security for millions of people, and offer opportunities
+									for economic development. By prioritizing the protection and sustainable management
+									of our oceans, we can ensure their continued health and productivity for present and
+									future generations.</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- goal 14 actions -->
+			<div>
+				<h4 class="text1" style="margin: 50px; font-size: 35px;">What can we do?
+				</h4>
+			</div>
+			<!-- image carousel goal 14 solutions -->
+			<div class="container">
+				<div id="cef2" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#cef2" data-slide-to="0" class="active"></li>
+						<li data-target="#cef2" data-slide-to="1"></li>
+						<li data-target="#cef2" data-slide-to="2"></li>
+						<li data-target="#cef2" data-slide-to="3"></li>
+						<li data-target="#cef2" data-slide-to="4"></li>
+						<li data-target="#cef2" data-slide-to="5"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="imgs/bower.jpeg" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 250px;">
+								<h3>Never buy bottled water – boil, filter, chlorine, rainwater, do what you can.</h3>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/waste.webp" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>Reduce waste – much of the waste that we produce on land ends up in the oceans. Stop
+									using plastic bags: Usage and wrong disposal of plastic is a major cause of marine
+									pollution.</h3>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/campaign.webp" class="d-block" , style="width:1040px; height: auto"
+								alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>Run a campaign on the effects of plastic use on the seas and oceans.</h3>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/mrbeast.webp" class="d-block" , style="width:1040px; height: auto"
+								alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>Organize a cleanup project for rivers and oceans. Engage your whole community to
+									clean up a local river, seaside or an ocean.</h3>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/fish.jpeg" class="d-block" , style="width:1040px; height: auto" alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>Buy local and certified fish. You can support small-scale producers by shopping in
+									local markets and shops.
+								</h3>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/cleanup.jpeg" class="d-block" , style="width:1040px; height: auto"
+								alt="14.1">
+							<div class="carousel-caption d-none d-md-block" style="margin-bottom: 200px;">
+								<h3>Find a Goal 14 charity you want to support. Any donation, big or small, can make a
+									difference!
+							</div>
+						</div>
+					</div>
+					<!-- previous & next button to switch through the images -->
+					<a class="carousel-control-prev" href="#cef2" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#cef2" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<!-- quiz -->
+			<div>
+				<h4 class="text1" style="margin-top: 100px; font-size: 35px;">Quiz time!</h4>
+			</div>
+			<div class="question" style="margin-top: 75px; margin-left: 30%;">
+				<h1>Question 1:</h1>
+			</div>
+			<div style="margin-left: 30%;">
+				<p style="font-size: large;">What is the current percentage of hard coral covers in 2018?</p>
+			</div>
+			<div style="margin-left: 30%">
+				<form>
+					<p>
+						<label>
+							<input class="with-gap" name="q1" type="radio" value="a" />
+							<span style="color:white; font-size: medium;">32.34%</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q1" type="radio" value="b" />
+							<span style="color:white; font-size: medium;">30.09%</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q1" type="radio" value="c" />
+							<span style="color:white; font-size: medium;">28.80%</span>
+						</label>
+					</p>
+				</form>
+			</div>
+			<div class="question" style="margin-left: 30%;">
+				<h1>Question 2:</h1>
+			</div>
+			<div style="margin-left: 30%;">
+				<p style="font-size: large;">Which target aims to reduce ocean acidification?</p>
+			</div>
+			<div style="margin-left: 30%">
+				<form>
+					<p>
+						<label>
+							<input class="with-gap" name="q2" type="radio" value="a" />
+							<span style="color:white; font-size: medium;">Target 11</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q2" type="radio" value="b" />
+							<span style="color:white; font-size: medium;">Target 14</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q2" type="radio" value="c" />
+							<span style="color:white; font-size: medium;">Target 15</span>
+						</label>
+					</p>
+				</form>
+			</div>
+			<div class="question" style="margin-left: 30%;">
+				<h1>Question 3:</h1>
+			</div>
+			<div style="margin-left: 30%;">
+				<p style="font-size: large;">How many Sustainable Development Goals (SDGs) are there?</p>
+			</div>
+			<div style="margin-left: 30%">
+				<form>
+					<p>
+						<label>
+							<input class="with-gap" name="q3" type="radio" value="a" />
+							<span style="color:white; font-size: medium;">15</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q3" type="radio" value="b" />
+							<span style="color:white; font-size: medium;">16</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q3" type="radio" value="c" />
+							<span style="color:white; font-size: medium;">17</span>
+						</label>
+					</p>
+				</form>
+			</div>
+			<div style="margin-left: 45%">
+				<button class="btn waves-effect waves-light" onclick="submitQuiz()">Submit</button>
+			</div>
+		</div>
+	</div>
+	<!-- end of goal 14 section, start of goal 13 section -->
+	<!-- divider transition  -->
+	<div class="section4">
+		<img src="imgs/land.png" alt="divider2">
+	</div>
+	<!-- goal 13 body -->
+	<div id="container">
+		<div class="section5">
+			<div>
+				<img src="imgs/goal13.png">
+				<h1 class="text1" style="color:black;">GOAL 13: Climate Action</h1>
+			</div>
+			<br><br>
+			<!-- graphs -->
+			<div class="section6">
+				<div id='bgraph' style="width:100%; height:auto"></div>
+			</div>
+			<div>
+				<div id='lgraph2' style="width:100%; height:auto"></div>
+			</div>
+			<!-- graph anaylsis -->
+			<div class="row" style="margin-left: 50px; margin-right: 50px">
+				<div class="col s12 m6">
+					<div class="card sc">
+						<div class="card-content">
+							<span class="card-title"></span>
+							<p>
+								<span style="font-size:15.0pt;opacity:100%;">The global temperature has already
+									risen 1.1ºC
+									above the pre-industrial level, with glaciers melting and the sea level
+									rising.
+									Impacts
+									of climate change also includes flooding and drought, displacing millions of
+									people,
+									sinking them into poverty and hunger, denying them access to basic services,
+									such as
+									health and education, expanding inequalities, stifling economic growth and
+									even
+									causing
+									conflict. By 2030, an estimated 700 million people will be at risk of
+									displacement by
+									drought alone.</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- goal 13 targets -->
+			<div>
+				<h4 class="text1" style="margin: 50px; font-size: 35px; color:black;">Targets
+				</h4>
+			</div>
+			<!-- image carousel for goal 13 targets -->
+			<div class="container c3">
+				<div id="cef3" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#cef3" data-slide-to="0" class="active"></li>
+						<li data-target="#cef3" data-slide-to="1"></li>
+						<li data-target="#cef3" data-slide-to="2"></li>
+						<li data-target="#cef3" data-slide-to="3"></li>
+						<li data-target="#cef3" data-slide-to="4"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="item active">
+							<img src="imgs/dry.jpeg" class="d-block" , style="width:1040px; height: auto;" alt="13.1">
+							<div class="carousel-caption d-none d-md-block cc2">
+								<h3>TARGET 13.1: STRENGTHEN RESILIENCE AND ADAPTIVE CAPACITY TO
+									CLIMATE<br>RELATED
+									DISASTERS
+								</h3>
+								<br>
+								<p>Strengthen resilience and adaptive capacity to climate-related hazards and
+									natural
+									disasters in all countries.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/dry.jpeg" class="d-block" , style="width:1040px; height: auto" alt="13.2">
+							<div class="carousel-caption d-none d-md-block cc2">
+								<h3>TARGET 13.2: INTEGRATE CLIMATE CHANGE MEASURES INTO<br>POLICIES AND PLANNING
+								</h3>
+								<br>
+								<p>Integrate climate change measures into national policies, strategies and
+									planning.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/dry.jpeg" class="d-block" , style="width:1040px; height: auto" alt="13.3">
+							<div class="carousel-caption d-none d-md-block cc2">
+								<h3>TARGET 13.3: BUILD KNOWLEDGE AND CAPACITY TO MEET CLIMATE CHANGE</h3>
+								<br>
+								<p>Improve education, awareness-raising and human and institutional capacity on
+									climate
+									change mitigation, adaptation, impact reduction and early warning.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/dry.jpeg" class="d-block" , style="width:1040px; height: auto" alt="13.4">
+							<div class="carousel-caption d-none d-md-block cc2">
+								<h3>TARGET 13.4: IMPLEMENT THE UN FRAMEWORK CONVENTION ON CLIMATE CHANGE</h3>
+								<br>
+								<p>By 2020, effectively regulate harvesting and end overfishing, illegal,
+									unreported
+									and
+									unregulated fishing and destructive fishing practices and
+									implement<br>science-based
+									management plans, in order to restore fish stocks in the shortest time
+									feasible,<br>at
+									least to levels that can produce maximum sustainable yield as determined by
+									their
+									biological characteristics.</p>
+							</div>
+						</div>
+						<div class="item">
+							<img src="imgs/dry.jpeg" class="d-block" , style="width:1040px; height: auto" alt="13.5">
+							<div class="carousel-caption d-none d-md-block cc2">
+								<h3>TARGET 13.5: PROMOTE MECHANISMS TO RAISE CAPACITY FOR<br>PLANNING AND
+									MANAGEMENT
+								</h3>
+								<br>
+								<p>Promote mechanisms for raising capacity for effective climate change-related
+									planning and
+									management in least developed countries and<br>small island developing
+									States,
+									including
+									focusing on women, youth and local and marginalized communities.</p>
+							</div>
+						</div>
+					</div>
+
+					<a class="carousel-control-prev" href="#cef3" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#cef3" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+			<div>
+				<h4 class="text1" style="margin: 50px; font-size: 35px; color:black;">Why is this important?
+				</h4>
+			</div>
+			<div class="row" style="margin-left: 50px; margin-right: 50px;">
+				<div class="col s12 m6">
+					<div class="card sc">
+						<div class="card-content">
+							<span class="card-title"></span>
+							<p>
+								<span style="font-size:15.0pt;opacity:100%;color:black">Climate change is a real and
+									undeniable
+									threat
+									to our entire civilization. The effects are already visible and will be
+									catastrophic
+									unless we act now. Through education, innovation and adherence to our
+									climate
+									commitments, we can make the necessary changes to protect the planet. These
+									changes also
+									provide huge opportunities to modernize our infrastructure which will create
+									new
+									jobs
+									and promote greater prosperity across the globe. Furthermore, addressing
+									climate
+									change
+									is crucial because it directly impacts vulnerable communities. By taking
+									proactive
+									measures, we can ensure a more just and equitable future for all, where
+									everyone
+									has
+									access to clean air, water, and a sustainable environment.</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- goal 13 actions -->
+			<div>
+				<h4 class="text1" style="margin: 50px; font-size: 35px; color:black;">What can we do?
+					<link>
+					</link>
+				</h4>
+			</div>
+			<div class="row" style="margin-left: 50px; margin-right: 50px;">
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.0pt;opacity:100%;">
+							Find a Goal 13 charity you want to support. Any
+							donation, big or small, can make a difference!
+						</span>
+					</div>
+				</div>
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:22.5pt;opacity:100%;">
+							Recycle paper, glass, plastic, metal and old electronics.
+						</span>
+					</div>
+				</div>
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.0pt;opacity:100%;">
+							Compost. Composting food scraps can reduce climate impact while also recycling
+							nutrients.
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-left: 50px; margin-right: 50px;">
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.0pt;opacity:100%;">
+							Choose reusable products. Use an eco-bag for shopping and a reusable water bottle or
+							a
+							cup to reduce your plastic waste.
+						</span>
+					</div>
+				</div>
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.0pt;opacity:100%;">
+							Buy eco-friendly products. Read the packaging to see if products are produced in an
+							eco-friendly way.
+						</span>
+					</div>
+				</div>
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.45pt;opacity:100%;">
+							Bike, walk or take public transport. Save the car trips for when you’ve got a big
+							group.
+						</span>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-left: 50px; margin-right: 50px;">
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.0pt;opacity:100%;">
+							Consume less meat and become vegetarian for one day a week. The meat production
+							industry
+							has a huge impact on the environment.
+						</span>
+					</div>
+				</div>
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.0pt;opacity:100%;">
+							Reduce your use of paper. Avoid printing and substitute it with electronic devices
+							or
+							carriers. Don’t shop for pets! Visit your local animal shelter and adopt an animal
+							there.
+						</span>
+					</div>
+				</div>
+				<div class="col s12 m5">
+					<div class="card-panel teal">
+						<span class="white-text" style="font-size:15.2pt;opacity:100%;">
+							Offset your carbon emissions. You can calculate your carbon footprint and purchase
+							climate credits from <a href="https://unfccc.int/climate-neutral-now">Climate
+								Neutral
+								Now</a>.
+						</span>
+					</div>
+				</div>
+			</div>
+			<!-- quiz -->
+			<div>
+				<h4 class="text1" style="margin-top: 100px; font-size: 35px; color:black;">Quiz time!</h4>
+			</div>
+			<div class="question" style="margin-top: 75px; margin-left: 30%;">
+				<h1>Question 1:</h1>
+			</div>
+			<div style="margin-left: 30%;">
+				<p style="font-size: large;">What is the main focus of Goal 13: Climate Action?</p>
+			</div>
+			<div style="margin-left: 30%">
+				<form>
+					<p>
+						<label>
+							<input class="with-gap" name="q4" type="radio" value="a" />
+							<span style="color:black; font-size: medium;">Reducing poverty and hunger</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q4" type="radio" value="b" />
+							<span style="color:black; font-size: medium;">Promoting gender equality</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q4" type="radio" value="c" />
+							<span style="color:black; font-size: medium;">Addressing climate change</span>
+						</label>
+					</p>
+				</form>
+			</div>
+			<div class="question" style="margin-left: 30%;">
+				<h1>Question 2:</h1>
+			</div>
+			<div style="margin-left: 30%;">
+				<p style="font-size: large;">How much has the global temperature already risen above the pre-industrial
+					level?</p>
+			</div>
+			<div style="margin-left: 30%">
+				<form>
+					<p>
+						<label>
+							<input class="with-gap" name="q5" type="radio" value="a" />
+							<span style="color:black; font-size: medium;"> 0.5ºC</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q5" type="radio" value="b" />
+							<span style="color:black; font-size: medium;">1.1ºC</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q5" type="radio" value="c" />
+							<span style="color:black; font-size: medium;">2.5ºC</span>
+						</label>
+					</p>
+				</form>
+			</div>
+			<div class="question" style="margin-left: 30%;">
+				<h1>Question 3:</h1>
+			</div>
+			<div style="margin-left: 30%;">
+				<p style="font-size: large;">What can individuals do to contribute to Goal 13: Climate Action?</p>
+			</div>
+			<div style="margin-left: 30%">
+				<form>
+					<p>
+						<label>
+							<input class="with-gap" name="q6" type="radio" value="a" />
+							<span style="color:black; font-size: medium;">Buy more plastic products</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q6" type="radio" value="b" />
+							<span style="color:black; font-size: medium;">Use reusable products and recycle</span>
+						</label>
+					</p>
+					<p>
+						<label>
+							<input class="with-gap" name="q6" type="radio" value="c" />
+							<span style="color:black; font-size: medium;">Consume more meat and avoid vegetables</span>
+						</label>
+					</p>
+				</form>
+			</div>
+			<div style="margin-left: 45%">
+				<button class="btn waves-effect waves-light" onclick="submitQuiz2()">Submit</button>
+			</div>
+		</div>
+	</div>
+	<!-- connections -->
+	<div class="section7">
+		<img src="imgs/tree.png" alt="divider3">
+	</div>
+	<div class="section8">
+		<div>
+			<img src="imgs/connect.jpeg">
+			<h1 class="text1" style="color:black">Connections</h1>
+		</div>
+		<div>
+			<h4 class="text1" style="margin: 50px; font-size: 35px; color:black;">What are the connections?
+			</h4>
+		</div>
+		<div class="row" style="margin-left: 50px; margin-right: 50px;">
+			<div class="col s12 m6">
+				<div class="card sc">
+					<div class="card-content">
+						<span class="card-title"></span>
+						<p>
+							<span style="font-size:15.0pt;opacity:100%;color:black">
+								Goal 14 (Life Below Water) and Goal 13 (Climate Action) are connected because they both
+								deal with important global issues. Goal 13 focuses on climate change, which affects the
+								health of marine ecosystems addressed in Goal 14. When the Earth gets warmer, the oceans
+								also warm up, which can harm marine life and disrupt the balance of ecosystems. The
+								oceans are important for regulating the Earth's climate because they absorb a lot of
+								carbon dioxide (a gas that causes climate change). Goal 14 aims to protect and use
+								marine resources wisely, which helps to reduce the effects of climate change. Rising sea
+								levels caused by climate change also pose a threat to coastal areas and the creatures
+								that live there, which is part of Goal 14. Climate change also makes the oceans more
+								acidic, which is bad for marine life. To protect marine ecosystems and achieve the goals
+								of Goal 14, we need to take action to address climate change as well. By working on both
+								goals together, we can create a better future for the planet and keep both land and sea
+								environments healthy.</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h4 class="text1" style="margin: 50px; font-size: 35px; color:black;">Possible Solutions
+			</h4>
+		</div>
+		<div class="row" style="margin-left: 50px; margin-right: 50px;">
+			<!-- Solution 1: Reduce greenhouse gas emissions -->
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="imgs/solar-power.jpg" alt="Solar Power">
+						<span class="card-title">Reduce Greenhouse Gas Emissions</span>
+					</div>
+					<div class="card-content">
+						<p>By transitioning to cleaner and renewable sources of energy, such as solar or wind power, we
+							can significantly reduce the carbon footprint and mitigate climate change. This will help
+							protect marine ecosystems from the adverse impacts of warming temperatures and ocean
+							acidification.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Solution 2: Promote sustainable fishing practices -->
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="imgs/sustainable-fishing.jpg" alt="Sustainable Fishing">
+						<span class="card-title">Promote Sustainable Fishing Practices</span>
+					</div>
+					<div class="card-content">
+						<p><br>Implementing and enforcing regulations that ensure responsible fishing practices can help
+							preserve marine biodiversity and prevent overfishing. This includes setting catch limits,
+							protecting sensitive habitats, and promoting the use of selective fishing gears that reduce
+							bycatch.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Solution 3: Conserve coastal ecosystems -->
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="imgs/coastal-ecosystems.jpg" alt="Coastal Ecosystems">
+						<span class="card-title">Conserve Coastal Ecosystems</span>
+					</div>
+					<div class="card-content">
+						<p>Protecting and restoring coastal habitats such as mangroves, coral reefs, and seagrass beds
+							can have multiple benefits. These ecosystems act as natural buffers against storm surges,
+							provide habitats for marine species, and sequester carbon dioxide, thereby mitigating
+							climate change and supporting marine life.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Solution 4: Minimize pollution -->
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="imgs/marine-pollution.jpg" alt="Marine Pollution">
+						<span class="card-title">Minimize Pollution</span>
+					</div>
+					<div class="card-content">
+						<p>Reducing marine pollution, including plastic waste, chemical contaminants, and nutrient
+							runoff, is crucial for maintaining the health of marine ecosystems. Implementing proper
+							waste management systems, promoting recycling, and raising awareness about the impact of
+							pollution on marine life are essential steps.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-left: 50px; margin-right: 50px;">
+			<!-- Solution 5: Enhance international cooperation -->
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="imgs/international-cooperation.jpg" alt="International Cooperation">
+						<span class="card-title">Enhance International Cooperation</span>
+					</div>
+					<div class="card-content">
+						<p>Collaboration among nations is vital for effective management of marine resources and
+							addressing climate change. By sharing knowledge, data, and resources, countries can work
+							together to develop sustainable strategies, establish marine protected areas, and implement
+							climate mitigation and adaptation measures.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Solution 6: Educate and raise awareness -->
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="imgs/ocean-education.jpg" alt="Ocean Education">
+						<span class="card-title">Educate and Raise Awareness</span>
+					</div>
+					<div class="card-content">
+						<p>Creating awareness about the importance of marine conservation and the impact of climate
+							change on the oceans is crucial. Education campaigns, public outreach programs, and
+							initiatives to promote sustainable practices can inspire individuals to take action and make
+							informed choices that benefit both the oceans and the climate.</p>
+					</div>
+				</div>
+			</div>
+
+			<!-- Solution 7: Support research and innovation -->
+			<div class="col s12 m6">
+				<div class="card">
+					<div class="card-image">
+						<img src="imgs/research-innovation.jpg" alt="Research and Innovation">
+						<span class="card-title">Support Research and Innovation</span>
+					</div>
+					<div class="card-content">
+						<p>Investing in scientific research, technology development, and innovation can lead to new
+							solutions and approaches for addressing climate change and protecting marine ecosystems.
+							This includes advancements in renewable energy, sustainable aquaculture practices, and
+							ecosystem-based management strategies.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h4 class="text1" style="margin: 50px; font-size: 35px; color:black;">Donations
+			</h4>
+		</div>
+		<div class="row" style="margin-left: 50px; margin-right: 50px;">
+			<div class="col s12 m6">
+				<div class="card organization">
+					<span class="card-title" style="margin-top: 20px;">TeamSeas</span>
+					<div class="card-content">
+						<p><br>TeamSeas is a collaborative effort between content creators and leading marine
+							conservation organizations to remove 30 million pounds of trash from our oceans by the
+							end of 2022.</p>
+					</div>
+					<div class="card-action">
+						<a href="https://teamseas.org" target="_blank"
+							class="btn waves-effect waves-light">Donate to TeamSeas</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m6">
+				<div class="card organization">
+					<span class="card-title" style="margin-top: 20px;">350.org</span>
+					<div class="card-content">						
+						<p>350.org is a global grassroots movement that works to address climate change by promoting
+							renewable energy, divesting from fossil fuels, and pressuring governments and
+							corporations to take climate action.</p>
+					</div>
+					<div class="card-action">
+						<a href="https://350.org/donate" target="_blank"
+							class="btn waves-effect waves-light">Support Climate Action</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-left: 50px; margin-right: 50px">
+			<div class="col s12 m6">
+				<div class="card organization" style="width:100%">
+					<span class="card-title" style="margin-top: 20px;">Climate Action Network (CAN)</span>
+					<div class="card-content">						
+						<p>Climate Action Network (CAN) is a network of over 1,300 organizations dedicated to promoting government and individual actions to combat climate change and advocate for sustainable practices.</p>
+					</div>
+					<div class="card-action">
+						<a href="https://climatenetwork.org/donate" target="_blank" rel="noopener noreferrer" class="btn waves-effect waves-light">Donate to Climate Action</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row" style="margin-left: 50px; margin-right: 50px;">
+			<div class="col s12 m6">
+				<div class="card organization">
+					<span class="card-title" style="margin-top: 20px;">Oceana</span>
+					<div class="card-content">						
+						<p>Oceana is an international advocacy organization that focuses on protecting and restoring the world's oceans by advocating for policies, conducting scientific research, and engaging the public.</p>
+					</div>
+					<div class="card-action">
+						<a href="https://oceana.org/donate" target="_blank"
+							class="btn waves-effect waves-light">Support Oceana</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col s12 m6">
+				<div class="card organization">
+					<span class="card-title" style="margin-top: 20px;">The Ocean Foundation</span>
+					<div class="card-content">						
+						<p>The Ocean Foundation is a nonprofit organization dedicated to conserving and restoring ocean ecosystems by supporting innovative projects, research, and policy initiatives.</p>
+					</div>
+					<div class="card-action">
+						<a href="https://oceanfdn.org/donate" target="_blank"
+							class="btn waves-effect waves-light">Donate to Ocean Conservation</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- imports -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<!-- footer -->
+	<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">UCC Year 9 Design Unit 3: Web development</h5>
+					<p class="grey-text text-lighten-4">This was pain - Noah</p>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<h5 class="white-text">Sources</h5>
+					<ul>
+						<li><a class="grey-text text-lighten-3" href="https://github.com/nt-c">Github</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://materializecss.com">Materialize</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://plotly.com/">Plotly</a></li>
+						<li><a class="grey-text text-lighten-3" href="https://getbootstrap.com/">Bootstrap</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© Copyright ntc 2023 All rights reserved.
+				<a class="grey-text text-lighten-4 right" href="#!"></a>
+			</div>
+		</div>
+	</footer>
+</body>
+<script src="script.js"></script>
+
+</html>
