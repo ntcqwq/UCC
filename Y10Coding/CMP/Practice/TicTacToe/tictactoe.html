@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="gameArea">
+            <h1>Simple Tic Tac Toe</h1>
+            <div class="scoreBoard">
+                <div class="playerName" id="p1" onclick="takeTurn(this);">ChatGPT</div>
+                <div class="playerStat" id="1" onclick="takeTurn(this);">0</div>
+                <div class="playerName" id="p2" onclick="takeTurn(this);">turnitin</div>
+                <div class="playerStat" id="2" onclick="takeTurn(this);">0</div>
+            </div>
+            <div class="gameBoard">
+                <div class="gameCell" id="t1" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="t2" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="t3" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="m1" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="m2" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="m3" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="b1" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="b2" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+                <div class="gameCell" id="b3" onclick="takeTurn(this);"><img src="UCC.png" width="100px"></div>
+            </div>
+            <div id="gameMsg"></div>
+            <script src="script.js"></script>
+        </div>
+    </body>
+</html>

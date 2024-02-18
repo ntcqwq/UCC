@@ -1,5 +1,5 @@
 import numpy as np, matplotlib.pyplot as plt, matplotlib as mpl, random, csv
-with open('coviddata.csv') as file:
+with open('/Users/nchen26/Code/kitchen/ucc/Y10Coding/DesigningData/Data/coviddata.csv') as file:
     covid_reader = list(csv.reader(file))[1:] # reading the file coviddata.csv
 covid_reader.sort(key = lambda x: int(x[0])) # to make data easier to read, sorting people by their "id". This "id" is a unique key that we can use
 data = {} # we are going to store all data analysed in a dictionary

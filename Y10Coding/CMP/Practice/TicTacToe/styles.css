@@ -1,0 +1,59 @@
+.gameBoard {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    width: 50%;
+}
+
+.scoreBoard {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 7px;
+    width: 25%;
+}
+
+.playerName {
+    border: 2px solid black;
+    padding: 7px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.playerStat {
+    border: 2px solid black;
+    padding: 7px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.gameCell {
+    border: 2px solid black;
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+#gameMsg {
+    font-size: 30px;
+    font-weight: bold;
+    color: goldenrod;
+    padding: 10px;
+}
+
+body {
+    place-items: center;
+}
+
+.gameArea {
+    display: grid;
+    place-items: center;
+}
+
+#t1{border-left:none;border-top:none}
+#t2{border-top:none}
+#t3{border-right:none;border-top:none}
+#m1{border-left:none;}
+#m3{border-right:none;}
+#b1{border-left:none;border-bottom:none}
+#b2{border-bottom:none}
+#b3{border-right:none;border-bottom:none}
