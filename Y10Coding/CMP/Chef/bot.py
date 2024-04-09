@@ -31,7 +31,6 @@ async def on_ready():
     print(f'Successful! Logged in as {bot.user.name}')
 
 @bot.command()
-# greet command
 async def greet(ctx):
     greetings = [
         ("Hello", "English"),
@@ -74,6 +73,7 @@ async def greet(ctx):
         ("Pryvit", "Ukrainian"),
         ("Sveikas", "Lithuanian"),
     ]
+    # greet command, sends the user a random item in the tuple, a greet in a language.
     msg = random.choice(greetings)
     await ctx.send(f"## {msg[0]}! ({msg[1]})")
 
@@ -86,12 +86,21 @@ async def luckynumber(ctx):
 @bot.command()
 async def cmds(ctx):
     commands_list = [
-        'cook cmds - Lists all available commands',
-        'cook greet - Greet you with a random language',
-        'cook luckynumber - Tells you a random lucky number',
-        'cook info - Provides info about the bot',
+        ':speech_balloon: **General Commands**',
+        '`cook cmds` - Lists all available commands',
+        '`cook greet` - Greet you with a random language',
+        '`cook luckynumber` - Tells you a random lucky number for today!',
+        '`cook info` - Provides info about the bot',
+        '',
+        ':musical_note: **Music Commands**',
+        '`cook recent` - Displays the most recent Spotify track played',
+        '`cook pg` - Shows the top genres in a Spotify playlist',
+        '`cook pa` - Shows the top artists in a Spotify playlist',
+        '`cook guess` - a guessing game based on a random line of lyrics in your playlists!',
+        "`cook blend` - creates a blend based on a user's music taste",
+        '`cook top` - Shows the top users in the server!'
     ]
-    await ctx.send('You can use the following commands: \n' + '\n'.join(commands_list))
+    await ctx.send('__**You can use the following commands: **__\n' + '\n'.join(commands_list))
 
 @bot.command()
 async def info(ctx):
@@ -109,7 +118,7 @@ async def test(ctx):
     embed.set_footer(text='This is a footer')
     embed.set_image(url='https://archive.org/download/discordprofilepictures//discordblue.png')
     embed.set_thumbnail(url='https://archive.org/download/discordprofilepictures//discordblue.png')
-    embed.set_author(name='bozo', icon_url='https://archive.org/download/discordprofilepictures//discordblue.png')
+    embed.set_author(name='chef', icon_url='https://archive.org/download/discordprofilepictures//discordblue.png')
     embed.add_field(name='Field Name', value='Field Value', inline=False)
     embed.add_field(name='Field Name', value='Field Value', inline=True)
     embed.add_field(name='Field Name', value='Field Value', inline=True)
@@ -272,7 +281,7 @@ class ArtistView(discord.ui.View):
         ]))
         
 @bot.command()
-async def playlist_genre(ctx):
+async def pg(ctx):
     current_user = sp.current_user()
     uid = current_user['id'] 
     playlists = sp.current_user_playlists(limit=50)['items']  # Increase limit if necessary
@@ -283,7 +292,7 @@ async def playlist_genre(ctx):
     await ctx.send("Select one of your playlists:", view=GenreView(playlists=own_playlists))
 
 @bot.command()
-async def playlist_artist(ctx):
+async def po(ctx):
     current_user = sp.current_user()
     uid = current_user['id'] 
     playlists = sp.current_user_playlists(limit=50)['items']  # Increase limit if necessary
@@ -306,7 +315,7 @@ async def fetch_all_playlist_tracks_async(playlist_id):
     return [track['track']['id'] for track in tracks if track['track']]
 
 @bot.command()
-async def lyric_guess(ctx):
+async def guess(ctx):
     current_user = sp.current_user()
     uid = current_user['id'] 
     playlists = sp.current_user_playlists(limit=50)['items']  # Increase limit if necessary
@@ -386,7 +395,7 @@ async def blend(ctx):
     await ctx.send(msg)
 
 @bot.command()
-async def leaderboard(ctx):
+async def top(ctx):
     user_scores = load_user_scores()
     scores = []
     msg = "**Top 10 users, by coins**"
